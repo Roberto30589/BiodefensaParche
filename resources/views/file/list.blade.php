@@ -12,7 +12,7 @@
     <div class="card m-3">
         <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
-                <h2><i class="material-icons fs-1">domain</i> Lista de Archivos</h2>
+                <h2><i class="material-icons fs-1">domain</i> Lista de {{$filetype[$filetype_id]}}</h2>
                 @can('file_create')
                 <a class="btn btn-success" onclick="agregar()">
                     <i class="material-icons">add</i>

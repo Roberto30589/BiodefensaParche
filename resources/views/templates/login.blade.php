@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel-Starter-Pack</title>
+        <title>Biodefensa App</title>
+        <link rel="shortcut icon" href="{{ url('/') }}/img/favicon.png">
 
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -15,12 +16,20 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <!-- Axios -->
 	    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <style>
+            body{
+                background: url("{{ url('/') }}/img/fondo.jpg");
+                background-position: center; /* Center the image */
+                background-repeat: no-repeat; /* Do not repeat the image */
+                background-size: cover;
+            }
+        </style>
     </head>
-    <body class="bg-light h-100 d-flex justify-content-center align-items-center">
-        <div class="card bg-dark text-white m-2">
+    <body class="h-100 d-flex justify-content-center align-items-center">
+        <div class="card bg-white text-black m-2">
             <div class="row m-0">
                 <div class="col-12 col-sm-6 p-0" align="center">
-                    <img src="{{url('/img/Atenotek-bg-dark.svg')}}" style="max-width:100%;padding:1rem;max-height:350px;">
+                    <img src="{{url('/img/LogoBiodefensa.jpg')}}" style="max-width:100%;padding:1rem;max-height:350px;">
                 </div>
                 <div class="col-12 col-sm-6 p-0">
                     <div class="card-body">
@@ -31,12 +40,11 @@
                                 <label for="login-email" class="form-label">E-mail</label>
                                 <input type="email" name="email" class="form-control" id="login-email" aria-describedby="emailHelp">
                             </div>
-                            <div class="mb-2">
+                            <div class="mb-5">
                                 <label for="login-password" class="form-label">Contraseña</label>
                                 <input type="password" name="password" class="form-control" id="login-password" aria-describedby="emailHelp">
                             </div>
-                            <div class="mb-4"><a href="#" class="link-light" style="font-size: 0.8rem">Light link</a></div>
-                            <button type="submit" class="btn btn-outline-light w-100">
+                            <button type="submit" class="btn btn-success w-100">
                                 <i class="material-icons">send</i> Ingresar
                             </button>
                         </form>

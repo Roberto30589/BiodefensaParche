@@ -29,7 +29,7 @@
                         <th>OT</th>
                         <th>{{$filename[$filetype_id]}}</th>
                         <th>Fecha</th>
-                        @if($filetype_id==3)
+                        @if($filetype_id>2)
                         <th>Versión</th>
                         @endif
                         <th>Acción</th>
@@ -74,7 +74,7 @@
                             <label class="form-label">Fecha</label>
                             <input type="date" class="form-control" name="date" required>
                         </div>
-                        @if($filetype_id==3)
+                        @if($filetype_id>2)
                         <div class="mb-3">
                             <label class="form-label">Versión</label>
                             <input type="number" class="form-control" name="version">
@@ -126,7 +126,7 @@
         }
 
         function eliminar(id,name){
-            if (confirm("¿Quiere eliminar "+name+" de los clientes?")) {
+            if (confirm("¿Quiere eliminar "+name+" de los archivos?")) {
                 axios.get("{{url('/main/file')}}/"+id+"/delete")
                 .then(res => {
                     if(typeof res.data  === 'object'){
@@ -180,7 +180,7 @@
                 { "data": "joborder_id","width":"20%"},
                 { "data": "description","width":"20%"},
                 { "data": "date","width":"15%"},
-                @if($filetype_id==3)
+                @if($filetype_id>2 )
                 { "data": "version","width":"15%"},
                 @endif
                 { data: "id", render : function ( data, type, row, meta ) {

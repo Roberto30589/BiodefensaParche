@@ -186,13 +186,17 @@
                 display: none;
             }
 
+            .my-primary{
+                background: #008D4C;
+            }
+
         </style>
     </head>
-    <body class="bg-dark">
-        <nav class="navbar text-white">
+    <body class="bg-light">
+        <nav class="navbar sticky-top text-white my-primary">
             <div class="container-fluid">
                 <div>
-                    <a class="navbar-brand text-white" href="{{ url('/') }}" align="center">L<span class="d-none d-sm-inline">aravel </span>S<span class="d-none d-sm-inline">tarter </span>P<span class="d-none d-sm-inline">ack</span></a>
+                    <a class="navbar-brand text-white" href="{{ url('/') }}" align="center">B<span class="d-none d-sm-inline">iodefensa</a>
                     <button class="btn text-white float-left" type="button" id="sidebar-toggle">
                         <i class="material-icons">chevron_right</i>
                     </button>
@@ -228,21 +232,33 @@
             </div>
         </nav>
         <div id="scaffold">
-            <div id="sidebar" class="bg-dark">
+            <div id="sidebar" class="my-primary">
                 <div id="sidebar-content">
                     <ul class="nav flex-column">
                         <a class="menu-link {{(request()->is('/')) ? 'active' : '' }}" href="{{ url('/') }}">
                             <i class="material-icons">home</i> Inicio
                         </a>
+                        <a class="menu-link {{(request()->is('main/file/1')) ? 'active' : '' }}" href="{{ url('main/file/1') }}">
+                            <i class="material-icons">task</i> Informes de Trabajo
+                        </a>
+                        <a class="menu-link {{(request()->is('main/file/2')) ? 'active' : '' }}" href="{{ url('main/file/2') }}">
+                            <i class="material-icons">science</i> Informes de Laboratorio
+                        </a>
+                        <a class="menu-link {{(request()->is('main/file/3')) ? 'active' : '' }}" href="{{ url('main/file/3') }}">
+                            <i class="material-icons">workspace_premium</i> Certificados
+                        </a>
+                        @can('user_create')
                         <li class="nav-item">
                             <a class="menu-collapse {{(request()->is('config/*')) ? 'active' : '' }}">
                                 <i class="material-icons">settings</i> Configurar
                             </a>
                             <div class="menu-items text-white" >
-                                <a class="menu-link {{(request()->is('config/users')) ? 'active' : '' }}" href="{{ url('config/users') }}"><i class="material-icons">person</i> Usuarios</a>
-                                <a class="menu-link {{(request()->is('config/clients')) ? 'active' : '' }}" href="{{ url('config/clients') }}"><i class="material-icons">domain</i> Clientes</a>
+                                <a class="menu-link {{(request()->is('config/user')) ? 'active' : '' }}" href="{{ url('config/user') }}"><i class="material-icons">person</i> Usuarios</a>
+                                <a class="menu-link {{(request()->is('config/client')) ? 'active' : '' }}" href="{{ url('config/client') }}"><i class="material-icons">domain</i> Clientes</a>
                             </div>
                         </li>
+                        @endcan
+                        
                         <li class="nav-item">
                             <a class="menu-collapse {{(request()->is('sesion/*')) ? 'active' : '' }}">
                                 <i class="material-icons">manage_accounts</i> Cuenta

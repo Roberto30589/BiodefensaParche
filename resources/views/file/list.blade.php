@@ -27,6 +27,7 @@
                     <tr>
                         <th>Cliente</th>
                         <th>OT</th>
+                        <th>{{$filename[$filetype_id]}}</th>
                         <th>Fecha</th>
                         @if($filetype_id==3)
                         <th>Versión</th>
@@ -60,6 +61,10 @@
                                     <option value="{{$client->id}}">{{$client->name}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{$filename[$filetype_id]}}</label>
+                            <input type="text" class="form-control" name="description" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Orden de Trabajo</label>
@@ -173,6 +178,7 @@
             "columns": [
                 { "data": "client.name","width":"20%"},
                 { "data": "joborder_id","width":"20%"},
+                { "data": "description","width":"20%"},
                 { "data": "date","width":"15%"},
                 @if($filetype_id==3)
                 { "data": "version","width":"15%"},

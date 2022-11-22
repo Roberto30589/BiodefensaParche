@@ -240,13 +240,16 @@
                             <i class="material-icons">home</i> Inicio
                         </a>
                         <a class="menu-link {{(request()->is('main/file/1')) ? 'active' : '' }}" href="{{ url('main/file/1') }}">
-                            <i class="material-icons">task</i> Informes de Trabajo
+                            <i class="material-icons">task</i>Trabajos
                         </a>
                         <a class="menu-link {{(request()->is('main/file/2')) ? 'active' : '' }}" href="{{ url('main/file/2') }}">
-                            <i class="material-icons">science</i> Informes de Laboratorio
+                            <i class="material-icons">science</i>Laboratorio
                         </a>
                         <a class="menu-link {{(request()->is('main/file/3')) ? 'active' : '' }}" href="{{ url('main/file/3') }}">
-                            <i class="material-icons">workspace_premium</i> Certificados
+                            <i class="material-icons">workspace_premium</i> Certificados Locales
+                        </a>
+                        <a class="menu-link {{(request()->is('main/file/3')) ? 'active' : '' }}" href="{{ url('main/file/4') }}">
+                            <i class="material-icons">workspace_premium</i> Certificados Activos
                         </a>
                         @can('user_create')
                         <li class="nav-item">

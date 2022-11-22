@@ -15,9 +15,10 @@ class FileController extends Controller
 {
     
     public function list($filetype_id){
-        $filetype = ["error","Informe de Trabajo","Informe de laboratorio","Certificados"];
+        $filetype = ["error","Informe de Trabajo","Informe de laboratorio","Certificados Local","Certificados Activo"];
+        $filename = ["error","Local","Local","Local","Activo"];
         $clients = Client::where('enabled',1)->orderBy('name')->get();
-        return view('file.list',compact('clients','filetype_id','filetype'));
+        return view('file.list',compact('clients','filetype_id','filetype','filename'));
     }
 
     function getdata($filetype_id){

@@ -12,6 +12,7 @@ class File extends Model
         'joborder_id',
         'date',
         'uri',
+        'description',
         'name',
         'version',
     ];

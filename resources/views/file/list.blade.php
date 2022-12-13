@@ -126,7 +126,7 @@
         }
 
         function eliminar(id,name){
-            if (confirm("¿Quiere eliminar "+name+" de los archivos?")) {
+            if (confirm("¿Quiere eliminar el archivo de la OT: "+name+"?")) {
                 axios.get("{{url('/main/file')}}/"+id+"/delete")
                 .then(res => {
                     if(typeof res.data  === 'object'){
@@ -186,6 +186,10 @@
                 { data: "id", render : function ( data, type, row, meta ) {
                     var buttons = '<div class="btn-group" role="group">';
                     buttons+= '<a class="btn btn-primary text-white" href="'+row.uri+'" title="Documento" target="_blank"><i class="material-icons">picture_as_pdf</i></a>';
+                    
+                    @can('file_create')
+                    buttons+= '<button type="button" class="btn btn-danger text-white" title="Eliminar" onclick="eliminar('+data+','+row.joborder_id+')"><i class="material-icons">close</i></button>';
+                    @endcan
                     buttons+= '</div>';
                     return buttons;
                 },"width":"1%"},

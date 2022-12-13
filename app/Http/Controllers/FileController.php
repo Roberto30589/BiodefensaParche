@@ -82,12 +82,11 @@ class FileController extends Controller
     {
         try {
             $file = File::findOrFail($id);
-            $file->enabled=0;
-            $file->save();
-            activitypush('ELIMINA', 'ELIMINA CALIBRE');
+            $file->delete();
+            activitypush('ELIMINA', 'ELIMINA OT');
             return $file;
         } catch (\Throwable $th) {
-            return "Error al eliminar Filee";
+            return "Error al eliminar File";
         }
     }
 
